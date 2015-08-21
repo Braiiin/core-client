@@ -1,10 +1,45 @@
-Register
-
-<form method="POST">
-    {% include "form.html" %}
-    {% if message %}
-    {{ message }}
-    {% endif %}
-    <a href="{{ url_for('public.login') }}">login</a>
-    <a href="/">back to site</a>
-</form>
+<html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Pinyon+Script|Great+Vibes|Raleway:100,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/assets/styles/public.css">
+</head>
+<body class="form register">
+<div class="bg"></div>
+<header>
+    <a href="/" class="header-logo">
+        <img src="/static/assets/images/logo-small-gold.png">
+        <h2 class="header-title">Braiiin</h2>
+    </a>
+</header>
+<section class="center-container">
+    <a href="{{ url_for('public.landing') }}" class="icon-x"><span class="bar"></span></a>
+    <div class="center">
+        <div class="index-logo">
+            <img src="/static/assets/images/logo-medium-white.png">
+            <h2 class="logo-title">Braiiin{% if service %} |&nbsp;{{ service.name }} {% endif %}</h2>
+        </div>
+        <form method="post">
+            {% if service %}
+            <input type="hidden" name="service_id" value="{{ service.id }}">
+            {% endif %}
+            <div class="input">
+                <p class="form-label">full name</p>
+                <input class="form-input" name="name">
+            </div>
+            <div class="input">
+                <p class="form-label">email</p>
+                <input class="form-input" name="email">
+            </div>
+            <div class="input">
+                <p class="form-label">password</p>
+                <input class="form-input" type="password" name="password">
+            </div>
+            <div class="clear">
+                <input type="submit" class="button small white" value="register">
+                <p class="form-addition"><a class="link-inline" href="{{ url_for('public.login') }}">Already have an account?</a></p>
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+</html>

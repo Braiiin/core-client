@@ -1,0 +1,457 @@
+/* -- general -- */
+
+* {
+    margin:0;
+    padding:0;
+    float:left;
+    display:inline-block;
+    font-family:'Source Sans Pro';
+    position:relative;
+    text-align:left;
+}
+html { background-color:#000 }
+html,body,.container,header,section,h1,h2,h3,h4,h5,h6 { width:100% }
+h1,h2,h3,h4,h5,h6 { text-align:center }
+html,body,.container { min-height:100% }
+a, c, br, b, i, img, a *, p *,p a,li a { float:none }
+a {
+    color:inherit;
+    font-size:inherit;
+    font-weight:inherit;
+    text-transform:inherit;
+    text-decoration:inherit;
+    float:left;
+}
+img {
+    border:none;
+    outline:none;
+}
+.center-container {
+    text-align:center;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+    .center-container::before {
+        content:"";
+        height:100%;
+    }
+.center,.center-container::before {
+    float:none;
+    display:inline-block;
+    vertical-align:middle;
+}
+style { display:none }
+.container {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    -o-filter: blur(0);
+}
+    .container.blurred {
+        filter: blur(3px);
+        filter: url("blur.svg#gaussian_blur");
+        -webkit-filter: blur(3px);
+        -o-filter: blur(3px);
+    }
+/* -- end general -- */
+
+/* -- theme -- */
+.button,.circle,.check,li a,.link-inline,.password-help {
+    transition:         0.2s ease;
+    -webkit-transition: 0.2s ease;
+    -moz-tranistion:    0.2s ease;
+    -o-transition:      0.2s ease;
+}
+.container {
+    transition:         0.5s ease;
+    -webkit-transition: 0.5s ease;
+    -moz-tranistion:    0.5s ease;
+    -o-transition:      0.5s ease;
+}
+
+h1.title {
+    font-size:5em;
+    color:#FFF;
+    text-transform:uppercase;
+    font-family:'Raleway';
+    font-weight:100;
+}
+.button {
+    text-transform:uppercase;
+    border:2px solid #333;
+    font-family:'Raleway';
+    font-weight:600;
+    color:#333;
+}
+    .large.button {
+        padding:1.5em 2em;
+        border:4px solid rgba(0,0,0,0.25);
+        font-size:1em;
+        letter-spacing:0.2em;
+    }
+        .large.button:hover {
+            color:#FFF;
+            background-color:#333;
+        }
+    .large.button.gold {
+        color:#FFCA4E;
+        border:4px solid rgba(255, 202, 78, 0.25);
+    }
+        .large.button.gold:hover {
+            color:#333;
+            background-color:#FFCA4E;
+        }
+    .cursive {
+        font-size:2em;
+        font-family:'Pinyon Script';
+        color:#FFF;
+        float:none;
+        margin:0.5em
+    }
+.link-inline {
+    font-size:12px;
+    color:rgba(255,255,255,0.5);
+    font-weight:600;
+    text-transform:uppercase;
+    font-size:0.8em;
+    letter-spacing:0.2em;
+    line-height:30px;
+    border-bottom:1px dotted transparent;
+}
+    .link-inline:hover {
+        color:#FFF;
+        border-bottom:1px dotted rgba(255,255,255,0.15);
+    }
+    li a .stripe {
+        background-color:rgba(255,255,255,0.5)
+    }
+        li a:hover .stripe {
+            background-color:#FFF;
+        }
+    .stripes {
+        width:16px;
+    }
+        .stripe {
+            width:100%;
+            height:1px;
+            background-color:#FFF;
+        }
+        .stripe + .stripe {
+            margin-top:3px;
+        }
+
+/* -- end theme -- */
+
+/* -- index -- */
+
+header {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 50px;
+    box-sizing:border-box;
+    z-index:2000;
+}
+
+.index {
+    background:url('../images/index-bg.png') #333 no-repeat center;
+    background-size:cover;
+}
+.index .center {
+    width:700px;
+    text-align:center;
+}
+    .index .center-container {
+        background-color:rgba(0,0,0,0.5);
+        height:100%;
+    }
+    .index-logo {
+        text-align:center;
+    }
+        .logo-title,.header-title {
+            color:#FFCA4E;
+            letter-spacing:0.5em;
+            text-transform:uppercase;
+            font-family:'Raleway';
+            font-weight:600;
+        }
+            .logo-title {
+                margin-top:1.5em;
+                font-size:0.9em;
+            }
+                .form .logo-title {
+                    color:#FFF;
+                }
+            .header-title {
+                width:auto;
+                float:right;
+                padding-left:1em;
+            }
+            .header-logo img {
+                margin-top:5px;
+            }
+    .index-text,.button-container,.button-addition {
+        width:100%
+    }
+    .index-subtitle {
+        text-transform:uppercase;
+        color:#FFF;
+        font-weight:600;
+        font-family:'Raleway';
+        font-size:0.75em;
+        letter-spacing:3px;
+        opacity:0.5;
+        margin-top:2em;
+    }
+        .index .title {
+            margin-top:0.25em;
+        }
+    .index-logo {
+        float:none
+    }
+    .button-container,.button-addition {
+        text-align:center;
+        margin-bottom:-2em;
+    }
+    .button-container .button {
+        float:none;
+        margin-top:1.5em;
+    }
+li a {
+    display:inline-block;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.5);
+    font-size:0.85em;
+    letter-spacing:0.25em;
+    padding:0 10px;
+    border-bottom:1px dotted transparent;
+}
+    li a:hover {
+        color:#FFF;
+        border-bottom:1px dotted rgba(255,255,255,0.15);
+    }
+    li a,.header-title {
+        line-height:30px;
+        margin:10px;
+        font-family:'Raleway';
+        font-weight:600;
+        font-size:0.8em;
+    }
+        li a span {
+            font-size:1em;
+            font-family:inherit;
+            color:inherit;
+        }
+    header nav {
+        float:right;
+    }
+.rise {
+    background-color:rgba(0,0,0,0.5);
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    display:inline-block;
+    z-index:1000;
+}
+    .rise-text {
+        width:100%;
+        text-align:center;
+        font-size:1.25em;
+        font-family:'Pinyon Script';
+        color:rgba(255,255,255,0.5);
+        padding:30px 0;
+    }
+
+/* -- end index -- */
+
+/* -- login -- */
+
+.form {
+    background-color:rgba(10,10,10,0.8);
+    z-index:1100
+}
+.form .center {
+    width:300px;
+    text-align:center;
+}
+.form form,.input,.clear {
+    width:100%
+}
+    .form input {
+        border:2px solid rgba(255,255,255,0.75);
+        color:#FFF;
+        background-color:transparent;
+    }
+    .form-input {
+        font-size:1em;
+        width:100%;
+        line-height:1em;
+        padding:0.85em 0.5em;
+    }
+    .form-label {
+        text-transform:uppercase;
+        color:#FFF;
+        font-size:0.75em;
+        position:absolute;
+        top:0;
+        right:100%;
+        margin-right:1em;
+        letter-spacing:0.25em;
+        line-height:1.5em;
+        padding:1.4em 0.5em;
+        min-width:120px;
+        text-align:right;
+    }
+        .checkbox .form-label {
+            padding:1em 0;
+        }
+    .form form {
+        margin-top:2em;
+    }
+        .form form > * + * {
+            margin-top:0.5em;
+        }
+    .password-help {
+        color:rgba(255,255,255,0.5);
+        font-weight:600;
+        font-family:'Raleway';
+        height:18px;
+        width:18px;
+        border:2px solid rgba(255,255,255,0.5);
+        border-radius:50%;
+        font-size:0.75em;
+        text-align:center;
+        line-height:18px;
+        position:absolute;
+        top:0;
+        right:0;
+        margin:15px;
+    }
+        .password-help:hover {
+            border:2px solid #FFF;
+            color:#FFF;
+        }
+    .form .checkbox {
+        float:right;
+    }
+    input.button {
+        padding:10px 15px;
+        letter-spacing:2px;
+    }
+        input.button:hover {
+            background-color:#FFF;
+            color:#333;
+            cursor:pointer;
+        }
+    input[type*="checkbox"] {
+        -webkit-appearance:none;
+        height:30px;
+        width:30px;
+        border-radius:50%;
+        margin-top:6px;
+    }
+        .checkcircle .circle {
+            border-radius:50%;
+            background-color:#FFF;
+            top:21px;
+            right:15px;
+            width:0;
+            height:0;
+            position:absolute;
+        }
+    input:checked + .checkcircle .circle {
+        top:6px;
+        right:0;
+        padding:15px;
+    }
+    input:checked + .checkcircle .check {
+        background-color:#333;
+    }
+        .checkcircle {
+            position:absolute;
+            top:0;
+            right:0;
+            z-index:-1;
+        }
+        .check {
+            width:11px;
+            height:3px;
+            background-color:#FFF;
+            position:absolute;
+            top:0;
+            right:0;
+            transform:          rotate(135deg);
+            -webkit-transform:  rotate(135deg);
+            -moz-transform:     rotate(135deg);
+            -o-transform:       rotate(135deg);
+            margin:20px 8px;
+        }
+            .check::before {
+                content:"";
+                height:6px;
+                width:3px;
+                position:absolute;
+                top:0;
+                right:0;
+                background-color:inherit;
+            }
+    .form-addition {
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        text-align:center;
+        margin-top:2em;
+    }
+        .form-addition a {
+            font-size:0.7em;
+        }
+    .container.inactive {
+        bottom:100%;
+        top:-100%;
+    }
+    .icon-x {
+        position:absolute;
+        top:0;
+        right:0;
+        margin:0 40px;
+        padding:30px 70px 30px 30px;
+        transform:          rotate(45deg);
+        -webkit-transform:  rotate(45deg);
+        -moz-transform:     rotate(45deg);
+        -o-transform:       rotate(45deg);
+        z-index:2150;
+        cursor:pointer;
+    }
+        .icon-x .bar {
+            height:85px;
+            width:3px;
+            background-color:#666;
+            margin-left:41px
+        }
+        .icon-x .bar::before {
+            content:"";
+            width:85px;
+            height:3px;
+            position:absolute;
+            top:41px;
+            left:-41px;
+            background-color:inherit;
+            z-index:-1;
+        }
+        .icon-x:hover .bar {
+            background-color:#FFF;
+
+        }
+
+/* -- end login -- */

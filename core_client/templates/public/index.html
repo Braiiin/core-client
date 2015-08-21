@@ -1,3 +1,52 @@
-Landing Page
-<a href="{{ url_for('public.login') }}">Login</a>
-<a href="{{ url_for('public.register') }}">Register</a>
+<html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100|Oxygen:300,700|Pinyon+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/assets/styles/public.css">
+</head>
+<body>
+<div class="index container">
+    <header>
+        <div class="header-logo">
+            <img src="/static/assets/images/logo-small-gold.png">
+            <h2 class="header-title">Braiiin</h2>
+        </div>
+        <nav>
+            <ul>
+                {% if current_user.is_authenticated() %}
+                <li><a href="{{ url_for('sphere.home') }}">Home</a></li>
+                <li><a href="{{ url_for('public.logout') }}">Logout</a></li>
+                {% else %}
+                <li><a href="{{ url_for('public.login') }}">Login</a></li>
+                {% endif %}
+                <!--<li><a href="mission.html">Mission</a></li>-->
+                <!--<li><a href="#">-->
+                <!--<span>Menu</span>-->
+                <!--<span class="stripes">-->
+                <!--<span class="stripe"></span>-->
+                <!--<span class="stripe"></span>-->
+                <!--<span class="stripe"></span>-->
+                <!--</span>-->
+                <!--</a></li>-->
+            </ul>
+        </nav>
+    </header>
+    <section class="center-container">
+        <div class="center">
+            <div class="index-text">
+                <h1 class="title">Let's Rethink.</h1>
+                <h2 class="index-subtitle">Mindmaps that build themselves, connecting software and people</h2>
+            </div>
+            <div class="button-container">
+                {% if current_user.is_authenticated() %}
+                <a href="{{ url_for('public.mission') }}" class="button large gold">Learn More</a>
+                {% else %}
+                <a href="{{ url_for('public.register') }}" class="button large gold register-open">Start Here</a>
+                <p class="button-addition"><a href="{{ url_for('public.login') }}" class="link-inline white login-open">Login</a><span class="cursive">or</span><a href="{{ url_for('public.mission') }}" class="link-inline white">Learn More</a></p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <!--<a class="rise">
+        <p class="rise-text">Our mission &amp; how you fit right in.</p>
+    </a>-->
+</div>

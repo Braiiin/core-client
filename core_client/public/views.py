@@ -63,9 +63,7 @@ def register():
 				password=password,
 			    salt=salt,
 			    username=form.username.data
-			)
-			user.post()
-			user.authenticate(password=password, salt=None)
+			).post().authenticate(password=password, salt=None)
 			if login_user(user):
 				return redirect(url_for('sphere.home'))
 			else:
@@ -73,6 +71,12 @@ def register():
 	except LogicException as e:
 		message = str(e)
 	return render_template('public/register.html', **locals())
+
+
+@public.route('/mission')
+def mission():
+	"""Mission"""
+	return 'coming soon'
 
 
 @login_manager.user_loader
