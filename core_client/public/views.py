@@ -36,6 +36,7 @@ def login():
 		form = LoginForm(request.form)
 		user = User(username=form.username.data)
 		if request.method == 'POST' and form.validate():
+			return 'yo'
 			user.get()
 			password = hashing.hash_value(form.password.data, salt=user.salt)
 			user.authenticate(password=password, salt=None)
