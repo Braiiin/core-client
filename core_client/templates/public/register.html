@@ -40,6 +40,7 @@
                 <p class="form-label">password</p>
                 <input class="form-input" type="password" name="password">
             </div>
+            <input type="hidden" value="{{ next or ''}}" name="next">
             <div class="clear">
                 <input type="submit" class="button small white" value="register">
                 <p class="form-addition"><a class="link-inline" href="{{ url_for('public.login') }}">Already have an account?</a></p>
