@@ -30,7 +30,7 @@ class ProductionConfig(Config):
     LOGIC_URI = 'http://logic.braiiin.com'
 
     INIT = {
-        'port': 80,
+        'port': 8000,
         'host': '127.0.0.1',
     }
 
