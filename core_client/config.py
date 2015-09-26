@@ -29,6 +29,11 @@ class ProductionConfig(Config):
     """Production vars"""
     LOGIC_URI = 'http://logic.braiiin.com'
 
+    INIT = {
+        'port': 80,
+        'host': '127.0.0.1',
+    }
+
 
 class DevelopmentConfig(Config):
     """For local runs"""
